@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "51707201292",
+    "project_id": "firestore-app-fdefb",
+    "storage_bucket": "firestore-app-fdefb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51707201292:android:4fd698bafdfa8dea82ab29",
+        "android_client_info": {
+          "package_name": "com.example.firestore2_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "51707201292-7nhc1j2jqpr6uldojh0ikge39sp442ag.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJqZIymesYR-WejfQn9HmLPcKaAiTOLKo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "51707201292-7nhc1j2jqpr6uldojh0ikge39sp442ag.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

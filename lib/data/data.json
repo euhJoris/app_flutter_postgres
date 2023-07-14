@@ -1,0 +1,36 @@
+{
+    "table1": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "age": 25
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "age": 30
+        },
+        {
+            "id": 3,
+            "name": "Michael Johnson",
+            "age": 40
+        }
+    ],
+    "table2": [
+        {
+            "id": 1,
+            "address": "123 Main Street",
+            "city": "New York"
+        },
+        {
+            "id": 2,
+            "address": "456 Elm Street",
+            "city": "Los Angeles"
+        },
+        {
+            "id": 3,
+            "address": "789 Oak Street",
+            "city": "Chicago"
+        }
+    ]
+}
