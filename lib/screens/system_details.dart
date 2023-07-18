@@ -18,7 +18,7 @@ class SystemDetails extends StatefulWidget {
 class _SystemDetailsState extends State<SystemDetails> {
   @override
   Widget build(BuildContext context) {
-    final systemData = ModalRoute.of(context)!.settings.arguments as UserSystems;
+    // final systemData = ModalRoute.of(context)!.settings.arguments as UserSystems;
 
     print('SystemDetails');
     return Scaffold(
@@ -27,12 +27,18 @@ class _SystemDetailsState extends State<SystemDetails> {
         flexibleSpace: AppBarCustom(
           showSecondColumn: false,
           showSecondColumnText: false,
-          firstColumnText: 'Mon champ de ${systemData.plantId}',
+          // firstColumnText: 'Mon champ de ${systemData.plantId}',
         ),
       ),
       body: Column(
           children: [
-            Text(systemData.toString())
+            ElevatedButton(
+              onPressed: (){
+                Navigator.pushNamed(context, '/list');
+              },
+              child: const Text('Liste')
+            )
+            // Text(systemData.toString())
             // CardView(
             //   averrageIrrigationTime: systemData.userIrrigationFrequency,
             //   waterVolumeUsed: systemData.lastWaterQuantityUsed, 

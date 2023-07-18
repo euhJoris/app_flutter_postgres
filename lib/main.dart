@@ -19,11 +19,11 @@ class MyApp extends StatelessWidget {
 
   // Variable used for testing initial route redirection
   //a can be delete but change initialRoute
-  final bool a = false; 
+  final bool a = true; 
   
   @override
   Widget build(BuildContext context) {
-    return  const MaterialApp(
+    return   MaterialApp(
       title: 'Test',
       debugShowCheckedModeBanner: false,
       // home:  Scaffold(
@@ -31,13 +31,12 @@ class MyApp extends StatelessWidget {
       //     child: FirstScreen(),
       //   ),
       // ),
-      // initialRoute: a?'/':'/list',
-      // routes: {
-      //   '/': (context) => SystemDetails(),
-      //   '/list': (context) => const ListOfSystems(),
-      //   '/settings': (context) => const UserSettings()
-      // },
-      home:  ListOfSystems()
+      initialRoute: a?'/':'/list',
+      routes: {
+        '/': (context) => const SystemDetails(),
+        '/list': (context) => const ListOfSystems(),
+        '/settings': (context) => const UserSettings()
+      },
     );
   }
 }

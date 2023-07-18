@@ -4,6 +4,7 @@ import 'package:firestore2_app/screens/tests/return_datas.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../utils/globals.dart';
 import '../widgets/appBar_Custom.dart';
 import '../widgets/custom_navigation_bar.dart';
 import '../widgets/system_list_containers.dart';
@@ -51,37 +52,29 @@ class ListOfSystems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final globals = Globals(context);
+
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false, // remove back button in appbar.
         flexibleSpace: const AppBarCustom(
             showSecondColumn: false, thirdColumnText: 'sbcxcxc sdbs'),
       ),
-      body: SingleChildScrollView(
+      body: Container(
           child: ListView.builder(
             itemCount: userSystem1.length,
-            itemBuilder: (BuildContext context, int index) {
-              return Column(
-                children: [
-                  InkWell(
-                    child: SystemContainer(
-                      userIrrigationFrequency: userSystem1[index].userIrrigationFrequency,
-                      systemName: userSystem1[index].systemName,
-                      plantId: userSystem1[index].plantId,
-                      systemMode: userSystem1[index].systemMode,
-                    ),
-                    // onTap: (){
-                    //   Navigator.pushReplacementNamed(
-                    //     context, 
-                    //     '/',
-                    //     arguments: {userSystem1[index].systemId}
-                    //   );
-                    // },
-                  )
-                ],
+            itemBuilder: (context, index) {
+              return ListTile(
+                title: Text(userSystem1[index].systemName),
+                subtitle: Text(userSystem1[index].systemId.toString()),
+                // trailing: Text(userSystem1[index].userIrrigationFrequency.toString())),
+                onTap: () {
+                  print(userSystem1[index].systemName);
+                },
               );
             }
           )
+          // child: Text("kjwskjbss")
       ),
       bottomNavigationBar: CustomNavigationBar(),
     );
