@@ -8,6 +8,7 @@ import '../utils/globals.dart';
 import '../widgets/appBar_Custom.dart';
 import '../widgets/custom_navigation_bar.dart';
 import '../widgets/system_list_containers.dart';
+import '../widgets/system_list_tile.dart';
 
 class UserSystems {
   final int systemId;
@@ -31,8 +32,11 @@ class UserSystems {
   );
 }
 
+/// The code `final userSystem1 = List.generate(10, (i) => UserSystems(i, 'Systeme ',
+/// Random().nextInt(50), Random().nextInt(10), Random().nextInt(100), getRandomLastWaterDate(),
+/// getRandomSystemMode(), 'rainy'))` is generating a list of `UserSystems` objects.
 final userSystem1 = List.generate(
-  5, 
+  10, 
   (i) => UserSystems(
     i, 
     'Systeme $i', 
@@ -53,6 +57,20 @@ class ListOfSystems extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final globals = Globals(context);
+    
+    Future<void> sendSystemDatas(UserSystems systemDatas) async {
+      Navigator.pushReplacementNamed(
+        context, 
+        "/",
+        arguments: {
+          "systemId": systemDatas.systemId,
+          "systemName": systemDatas.systemName,
+          "plantId": systemDatas.plantId,
+          "userIrrigationFrequency": systemDatas.userIrrigationFrequency,
+          "lastWaterQuantityUsed": systemDatas.lastWaterQuantityUsed,
+        }
+      );
+    }
 
     return Scaffold(
       appBar: AppBar(
@@ -60,23 +78,44 @@ class ListOfSystems extends StatelessWidget {
         flexibleSpace: const AppBarCustom(
             showSecondColumn: false, thirdColumnText: 'sbcxcxc sdbs'),
       ),
-      body: Container(
-          child: ListView.builder(
-            itemCount: userSystem1.length,
-            itemBuilder: (context, index) {
-              return ListTile(
-                title: Text(userSystem1[index].systemName),
-                subtitle: Text(userSystem1[index].systemId.toString()),
-                // trailing: Text(userSystem1[index].userIrrigationFrequency.toString())),
-                onTap: () {
-                  print(userSystem1[index].systemName);
-                },
-              );
-            }
-          )
-          // child: Text("kjwskjbss")
+      body: Row(
+        children: [
+          Expanded(
+            child: Container(
+                  child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: userSystem1.length,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      child: SystemListTile(
+                        systemId: userSystem1[index].systemId,
+                        systemName: userSystem1[index].systemName,
+                        plantId: userSystem1[index].plantId,
+                        userIrrigationFrequency: userSystem1[index].userIrrigationFrequency,
+                        lastWaterQuantityUsed: userSystem1[index].lastWaterQuantityUsed,
+                        lastWaterDate: 'last',
+                        systemMode: 'dg',
+                        meteo: 'eer',
+                        boxColor: randomColors(),
+                      ),
+                      onTap:() {
+                        sendSystemDatas(userSystem1[index]);
+                      },
+                    );
+                  }
+                )
+            ),
+          ),
+          // Gap(20),
+          // ElevatedButton(
+          //   onPressed: (){
+          //     print("Add new System");
+          //   },
+          //   child: Text("Add new System"),
+          // )
+        ],
       ),
-      bottomNavigationBar: CustomNavigationBar(),
+      bottomNavigationBar: const CustomNavigationBar(),
     );
   }
 }
@@ -106,4 +145,16 @@ class ListOfSystems extends StatelessWidget {
     ];
 
     return texts[Random().nextInt(texts.length)];
+  }
+
+  Color randomColors() {
+    final _color = [
+      const Color.fromARGB(255, 196, 130, 126),
+      const Color.fromARGB(255, 43, 177, 48),
+      const Color.fromARGB(255, 23, 73, 115),
+      const Color.fromARGB(255, 196, 190, 137),
+      const Color.fromARGB(255, 219, 157, 230),
+    ];
+
+    return _color[Random().nextInt(_color.length)];
   }

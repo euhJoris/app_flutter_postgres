@@ -7,24 +7,19 @@ import 'package:gap/gap.dart';
 import '../utils/app_styles.dart';
 import '../utils/globals.dart';
 
-class CardView extends StatefulWidget {
+class CardView extends StatelessWidget {
 
   final int averrageIrrigationTime;
   final int waterVolumeUsed;
   final int fieldHumidity;
 
   const CardView({
-    this.averrageIrrigationTime = 0,
-    this.waterVolumeUsed = 0,
-    this.fieldHumidity = 0,
+    required this.averrageIrrigationTime ,
+    required this.waterVolumeUsed ,
+    required this.fieldHumidity ,
     super.key}
   );
 
-  @override
-  State<CardView> createState() => _CardViewState();
-}
-
-class _CardViewState extends State<CardView> {
   @override
   Widget build(BuildContext context) {
     final globals = Globals(context);
@@ -58,10 +53,7 @@ class _CardViewState extends State<CardView> {
                           style: Styles.textStyle
                         ),
                         const Gap(25),
-                        Text(
-                          "${!widget.waterVolumeUsed.isNull ? widget.waterVolumeUsed : '--'}",
-                          style: Styles.textStyle
-                        ),
+                        Text(waterVolumeUsed.toString()),
                       ]
                     ),
                   )
@@ -77,7 +69,7 @@ class _CardViewState extends State<CardView> {
                         ),
                         const Gap(25),
                         Text(
-                          "${!widget.fieldHumidity.isNull ? widget.fieldHumidity  : '--'} %",
+                          fieldHumidity.toString(),
                           style: Styles.textStyle
                         ),
                       ]
@@ -95,7 +87,7 @@ class _CardViewState extends State<CardView> {
                         ),
                         const Gap(25),
                         Text(
-                          "${!widget.averrageIrrigationTime.isNull ? widget.averrageIrrigationTime : '--'} min.",
+                          averrageIrrigationTime.toString(),
                           style: Styles.textStyle
                         ),
                       ]

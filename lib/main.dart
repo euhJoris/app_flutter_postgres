@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
 
   // Variable used for testing initial route redirection
   //a can be delete but change initialRoute
-  final bool a = true; 
+  final bool a = false; 
   
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       // ),
       initialRoute: a?'/':'/list',
       routes: {
-        '/': (context) => const SystemDetails(),
+        '/': (context) =>  SystemDetails(),
         '/list': (context) => const ListOfSystems(),
         '/settings': (context) => const UserSettings()
       },

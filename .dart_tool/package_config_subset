@@ -82,6 +82,14 @@ gap
 2.12
 file:///home/euhjoris/.pub-cache/hosted/pub.dev/gap-3.0.1/
 file:///home/euhjoris/.pub-cache/hosted/pub.dev/gap-3.0.1/lib/
+http
+3.0
+file:///home/euhjoris/.pub-cache/hosted/pub.dev/http-1.1.0/
+file:///home/euhjoris/.pub-cache/hosted/pub.dev/http-1.1.0/lib/
+http_parser
+2.12
+file:///home/euhjoris/.pub-cache/hosted/pub.dev/http_parser-4.0.2/
+file:///home/euhjoris/.pub-cache/hosted/pub.dev/http_parser-4.0.2/lib/
 js
 2.19
 file:///home/euhjoris/.pub-cache/hosted/pub.dev/js-0.6.7/

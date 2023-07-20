@@ -146,6 +146,18 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "http",
+      "rootUri": "file:///home/euhjoris/.pub-cache/hosted/pub.dev/http-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "http_parser",
+      "rootUri": "file:///home/euhjoris/.pub-cache/hosted/pub.dev/http_parser-4.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "js",
       "rootUri": "file:///home/euhjoris/.pub-cache/hosted/pub.dev/js-0.6.7",
       "packageUri": "lib/",
@@ -290,7 +302,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-07-12T09:44:27.635783Z",
+  "generated": "2023-07-19T23:21:41.934883Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }
